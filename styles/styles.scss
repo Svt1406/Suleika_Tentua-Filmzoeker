@@ -1,47 +1,149 @@
-@import './radiobtn';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+$color:rgb(235, 235, 235);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
     list-style-type: none;
+    text-decoration: none;
 }
 
-.container { 
-    background-color: rgb(211, 205, 205);
-    color: black;
-    height: 100vh;
-    overflow: auto;
-    padding: 20px;
-    row-gap: 10px;
-    text-align: center;
-    font-family:'Poppins', sans-serif;
+.container {
+    background-color: $color;
 }
 
-h1 {
-    grid-column: 3 / 8;
-    grid-row: 1 / 2;
-    margin-top: 40px;
-    margin-bottom: 25px;
-    color: deeppink;
-    text-align: center;
-    font-family:'Poppins', sans-serif;
-    font-size: 2.2rem;
+.filter--menu { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: #3E5151;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Poppins', sans-serif;
+}
+
+h1  {
+    color: $color;
     text-transform: uppercase;
-}
-h2 {
-    margin-top: 150px;
+    letter-spacing: 5px;
+    font-size: 2.2em;
+    font-weight: bold;
 }
 
-// .header-container {
-//     display: grid; 
-//     grid-template-columns: repeat(12, 1fr);
-//     grid-template-rows: 200px 1fr 1fr;
-// }
+.filter__links {
+    display: flex;
+    justify-content: space-between;
+    width: 40%; 
+}
 
-// .form-container {
-//     grid-column: 10/13;
-//     grid-row: 1/2;
-// }
+.radiobtn-container { 
+    color: $color;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.burger-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-btn div { 
+    width: 25px;
+    height: 3px; 
+    background-color: $color;
+    margin: 5px;
+}
+
+// media queries 
+@media screen and (max-width: 1100px){
+    .filter__links {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .container {
+        overflow-x: hidden;
+    }
+
+    .filter__links {
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        top: 12vh;
+        width: 22%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        color: #3E5151;
+    }
+
+    .toggle__item { 
+        list-style: none;
+        padding-top: 5px;
+        width: 170px;
+        height: 40px;
+        text-align: center;
+        transition: transform 0.5s ease-in-out;
+        color: #3E5151;
+        border-left: 1px solid rgb(244, 243, 243);
+        border-top: 1px solid rgb(244, 243, 243);
+        border-bottom: 1px solid rgb(244, 243, 243);
+        border-radius: 10px 0px 0px 10px;
+        background-color: #DECBA4;
+    }
+
+    .radiobtn-container { 
+        display: block;
+        position: absolute;
+        padding-left: 50px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #3E5151;
+        font-weight: bold;
+        font-size: 1em;
+        text-transform: uppercase;
+      
+        & input  { 
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        
+        &:hover input ~ .checkmark { 
+        background-color: #3E5151;
+        }
+        
+        & input:checked ~ .checkmark {
+        background-color: #3E5151;
+        }
+    }
+    
+    .checkmark {
+        position: absolute;
+        top: 7px;
+        left: 25px;
+        height: 10px;
+        width: 10px;
+        background-color:  rgb(235, 226, 226);
+        border-radius: 50%;
+    }
+
+    .burger-btn {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+}

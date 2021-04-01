@@ -94,7 +94,20 @@ const addEventListeners = () => {
     searchForm.addEventListener('submit', searchMovies);
 };
 
-addEventListeners();
-addMoviesToDom(movies);
+// mobile website menu toggle 
+const burgerSlide = () => {
+    let burger = document.querySelector('.burger-btn');
+    let navBarToggle = document.querySelector('.filter__links');
+    let radioLinks = document.querySelectorAll('.radiobtn-container');
+    burger.addEventListener('click', () => {
+      navBarToggle.classList.toggle('nav-active');
+    });
+}
 
+const app = () => {
+    addEventListeners();
+    burgerSlide();
+    addMoviesToDom(movies);
+}
 
+app();

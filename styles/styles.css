@@ -1,86 +1,144 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
-.filter--menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 5px;
-  margin-right: 5px;
-}
-
-.radiobtn-container {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin: 10px 10px;
-  color: #ede6e6;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 5px 8px;
-  font-size: 1em;
-  background-color: gray;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.filter__input {
-  display: none;
-}
-.filter__input:checked + .checkmark::after {
-  transform: scale(1);
-}
-
-.checkmark {
-  width: 1em;
-  height: 1em;
-  border: 2px solid lightpink;
-  border-radius: 50%;
-  margin-right: 10px;
-  padding: 2px;
-}
-.checkmark::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
-  background: deeppink;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: transform 0.15s;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
   list-style-type: none;
+  text-decoration: none;
 }
 
 .container {
-  background-color: #d3cdcd;
-  color: black;
-  height: 100vh;
-  overflow: auto;
-  padding: 20px;
-  row-gap: 10px;
-  text-align: center;
+  background-color: #ebebeb;
+}
+
+.filter--menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: #3E5151;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #DECBA4, #3E5151);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: "Poppins", sans-serif;
 }
 
 h1 {
-  grid-column: 3/8;
-  grid-row: 1/2;
-  margin-top: 40px;
-  margin-bottom: 25px;
-  color: deeppink;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 2.2rem;
+  color: #ebebeb;
   text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 2.2em;
+  font-weight: bold;
 }
 
-h2 {
-  margin-top: 150px;
+.filter__links {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.radiobtn-container {
+  color: #ebebeb;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.burger-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.burger-btn div {
+  width: 25px;
+  height: 3px;
+  background-color: #ebebeb;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1100px) {
+  .filter__links {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 786px) {
+  .container {
+    overflow-x: hidden;
+  }
+
+  .filter__links {
+    position: absolute;
+    right: 0px;
+    height: 30vh;
+    top: 12vh;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    color: #3E5151;
+  }
+
+  .toggle__item {
+    list-style: none;
+    padding-top: 5px;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    color: #3E5151;
+    border-left: 1px solid #f4f3f3;
+    border-top: 1px solid #f4f3f3;
+    border-bottom: 1px solid #f4f3f3;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #DECBA4;
+  }
+
+  .radiobtn-container {
+    display: block;
+    position: absolute;
+    padding-left: 50px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #3E5151;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  .radiobtn-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .radiobtn-container:hover input ~ .checkmark {
+    background-color: #3E5151;
+  }
+  .radiobtn-container input:checked ~ .checkmark {
+    background-color: #3E5151;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 7px;
+    left: 25px;
+    height: 10px;
+    width: 10px;
+    background-color: #ebe2e2;
+    border-radius: 50%;
+  }
+
+  .burger-btn {
+    display: block;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
 }/*# sourceMappingURL=styles.css.map */

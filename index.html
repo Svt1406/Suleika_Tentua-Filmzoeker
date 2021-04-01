@@ -10,43 +10,61 @@
         <title>Opdracht Filmzoeker</title>
     </head>
     <body class="container">
-        <header class="header-container">
-            <h1>Opdracht Filmzoeker</h1>
+        <header>
+            <nav class="filter--menu">
+                <h1>Filmzoeker</h1>
+                <ul class="filter__links">
+                    <li class="toggle__item">
+                        <label class="radiobtn-container">
+                            <input type="radio" class="filter__input" name="radio-btn" value="new">
+                            <span class="checkmark"></span>
+                            New
+                        </label>
+                    </li>
+
+                    <li class="toggle__item">
+                        <label class="radiobtn-container">
+                            <input type="radio" class="filter__input" name="radio-btn" value="avengers">
+                            <span class="checkmark"></span>
+                            Avengers
+                        </label>
+                    </li>
+
+                    <li class="toggle__item">
+                        <label class="radiobtn-container">
+                            <input type="radio" class="filter__input" name="radio-btn" value="x-men">
+                            <span class="checkmark"></span>
+                            X-men
+                        </label>
+                    </li>
+
+                    <li class="toggle__item">
+                        <label class="radiobtn-container">
+                            <input type="radio" class="filter__input" name="radio-btn" value="princess">
+                            <span class="checkmark"></span>
+                            Princess
+                        </label>
+                    </li>
+
+                    <li class="toggle__item">
+                        <label class="radiobtn-container">
+                            <input type="radio" class="filter__input" name="radio-btn" value="batman">
+                            <span class="checkmark"></span>
+                            Batman
+                        </label>
+                    </li>
+                </ul>
+             
+                <div class="burger-btn"> 
+                    <div></div>  
+                    <div></div>  
+                    <div></div>
+                </div>  
+            </nav>
             <form id="form-container">
                 <input type="text" placeholder="Typ to search" name="submit" class="search-input">
                 <input type="submit" id="search-button" class="search-button" value="submit">
             </form>
-            <nav class="filter--menu">
-                <label class="radiobtn-container">
-                    <input type="radio" class="filter__input" name="radio-btn" value="new">
-                    <span class="checkmark"></span>
-                    Latest Movies
-                </label>
-
-                <label class="radiobtn-container">
-                    <input type="radio" class="filter__input" name="radio-btn" value="avengers">
-                    <span class="checkmark"></span>
-                    Avenger Genre
-                </label>
-
-                <label class="radiobtn-container">
-                    <input type="radio" class="filter__input" name="radio-btn" value="x-men">
-                    <span class="checkmark"></span>
-                    X-men Genre
-                </label>
-
-                <label class="radiobtn-container">
-                    <input type="radio" class="filter__input" name="radio-btn" value="princess">
-                    <span class="checkmark"></span>
-                    Princess Genre
-                </label>
-
-                <label class="radiobtn-container">
-                    <input type="radio" class="filter__input" name="radio-btn" value="batman">
-                    <span class="checkmark"></span>
-                    Batman Genre
-                </label>
-            </nav>
         </header>
         <main class="movie--container">
             <ul class="movie__list" id="movie-list"></ul>
