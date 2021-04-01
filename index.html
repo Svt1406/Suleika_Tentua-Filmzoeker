@@ -9,36 +9,48 @@
         <link rel="stylesheet" href="styles/styles.css">
         <title>Opdracht Filmzoeker</title>
     </head>
-    <body><header>
+    <body class="container">
+        <header class="header-container">
             <h1>Opdracht Filmzoeker</h1>
+            <form id="form-container">
+                <input type="text" placeholder="Search..." name="submit" class="search-input">
+                <input type="submit" id="search-button" class="search-button" value="submit">
+            </form>
             <nav class="filter--menu">
-                <ul class="filter__list">
-                    <li class="filter__item">
-                        <label for="new-movies-btn">Last movie, 2014 or newer</label>
-                        <input type="radio" id="filter__new" name="radio-btn" value="new">
-                    </li>
-                    <li class="filer__item">
-                        <label for="Avenger-movies-btn">Avenger movies</label>
-                        <input type="radio" id="filter__avengers" name="radio-btn" value="avengers">
-                    </li>
-                    <li class="filer__item">
-                        <label for="xmen-movies-btn">X-men movies</label>
-                        <input type="radio" id="filter__xmen" name="radio-btn" value="x-men">
-                    </li>
-                    <li class="filer__item">
-                        <label for="prncess-movies-btn">Princess movies</label>
-                        <input type="radio" id="filter__princess" name="radio-btn" value="princess">
-                    </li>  
-                    <li class="filer__item"> 
-                        <label for="batman-movies-btn">Batman movies</label>
-                        <input type="radio" id="filter__batman" name="radio-btn" value="batman">
-                    </li>
-                </ul>
+                <label class="radiobtn-container">
+                    <input type="radio" class="filter__input" name="radio-btn" value="new">
+                    <span class="checkmark"></span>
+                    Latest Movies
+                </label>
+
+                <label class="radiobtn-container">
+                    <input type="radio" class="filter__input" name="radio-btn" value="avengers">
+                    <span class="checkmark"></span>
+                    Avenger Genre
+                </label>
+
+                <label class="radiobtn-container">
+                    <input type="radio" class="filter__input" name="radio-btn" value="x-men">
+                    <span class="checkmark"></span>
+                    X-men Genre
+                </label>
+
+                <label class="radiobtn-container">
+                    <input type="radio" class="filter__input" name="radio-btn" value="princess">
+                    <span class="checkmark"></span>
+                    Princess Genre
+                </label>
+
+                <label class="radiobtn-container">
+                    <input type="radio" class="filter__input" name="radio-btn" value="batman">
+                    <span class="checkmark"></span>
+                    Batman Genre
+                </label>
             </nav>
         </header>
         <main class="movie--container">
             <ul class="movie__list" id="movie-list"></ul>
         </main>
-        <footer><h5>Copyright Suleika Tentua</h5></footer>
+        <footer class="footer-container"></footer>
     </body>
 </html>

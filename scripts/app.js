@@ -23,7 +23,6 @@ const addMoviesToDom = (movies) => {
     movieList.querySelectorAll('*').forEach(element => element.remove());
     // console.log("Movie list:", movieList);
     let movieTitles = movies.map(titleMapper);
-
     movieTitles.forEach(element => {
         movieList.appendChild(element);
     });
@@ -33,23 +32,30 @@ const addMoviesToDom = (movies) => {
 // Function to filter on specific genre/word
 const filterMovies = (wordInMovieTitle) => {
     let filtered = movies.filter(element => {
-        //console.log(element.Title);
-        return element.Title.includes(wordInMovieTitle);
+        return element.Title.toUpperCase().includes(wordInMovieTitle.toUpperCase());
     });
     return filtered;
 };
 
+//Function to filter the search form
+const searchMovies = (event) => {
+    event.preventDefault();
+    let searchInput = document.querySelector('.search-input');
+    let searchedMovies = filterMovies(searchInput.value);
+    if (searchedMovies.length == 0) {
+        return document.getElementById('movie-list').innerHTML = `<h2>Sorry we could not find any matching movies, please try again!<h2>`;
+    } 
+    addMoviesToDom(searchedMovies);
+}
 
 // function to filter latestMovies 
 const filterLatestMovies = () => {
     let filtered = movies.filter(element => {
-        console.log(element.Year >= 2014);
         return element.Year >= 2014; 
     });
-    console.log(filtered);
+    //console.log(filtered);
     return filtered;
 }
-
 
 // Adding the filter function to every individual radio button
 const handleOnChangeEvent = event => { 
@@ -70,6 +76,7 @@ const handleOnChangeEvent = event => {
             filteredMovies = filterMovies ('Princess');
             break;
         case ('batman'):
+            let hoi = 'Batman'
             filteredMovies = filterMovies ('Batman');
             break;
         }
@@ -82,9 +89,12 @@ const addEventListeners = () => {
     let filterBtn = document.getElementsByName('radio-btn');
     filterBtn.forEach(button => {
         button.addEventListener('change', handleOnChangeEvent);
-        //console.log(filterBtn);
-    });
-}
+    });  
+    const searchForm = document.querySelector('#form-container');
+    searchForm.addEventListener('submit', searchMovies);
+};
 
 addEventListeners();
 addMoviesToDom(movies);
+
+
