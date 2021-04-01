@@ -12,12 +12,16 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-right: 5px;
-  color: maroon;
-  border: 2px solid lightpink;
-  border-radius: 5%;
-  padding: 5px 15px;
+  margin: 10px 10px;
+  color: #ede6e6;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 8px;
   font-size: 1em;
+  background-color: gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .filter__input {
