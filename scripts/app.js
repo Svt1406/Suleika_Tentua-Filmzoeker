@@ -9,7 +9,9 @@ const getUrl = (imdbID) => {
 // Function to display the movies in the DOM. 
 const titleMapper = (movie) => {
     let movieListItem = document.createElement('li');
+    movieListItem.classList.add('images-center');
     let movieListImg = document.createElement('img');
+    movieListImg.classList.add('images-styles');
     let movieListLink = getUrl(movie.imdbID);
     movieListImg.src = movie.Poster;
     movieListLink.appendChild(movieListImg);
@@ -100,7 +102,7 @@ const burgerSlide = () => {
     let navBarToggle = document.querySelector('.filter__links');
     let radioLinks = document.querySelectorAll('.radiobtn-container');
     burger.addEventListener('click', () => {
-      navBarToggle.classList.toggle('nav-active');
+      navBarToggle.classList.toggle('radio-active');
     });
 }
 
