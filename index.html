@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script defer src="./scripts/database.js"></script>
         <script defer src="./scripts/app.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <link rel="stylesheet" href="styles/styles.css">
-        <title>Opdracht Filmzoeker</title>
+        <title>Eindopdracht Filmzoeker</title>
     </head>
     <body class="container">
         <header>
@@ -61,14 +62,19 @@
                     <div></div>
                 </div>  
             </nav>
-            <form id="form-container">
-                <input type="text" placeholder="Typ to search" name="submit" class="search-input">
-                <button></button>
-            </form>
         </header>
-        <main class="movie--container">
-            <ul class="movie__list" id="movie-list"></ul>
-        </main>
-        <footer class="footer-container"></footer>
+        <main>
+            <div class="wrap">
+                <form id="form-container">
+                    <input type="text" placeholder=" Hi there, what are you looking for?" name="submit" class="search-input">
+                    <button class="search-button"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="movie--container">
+                <h3 class="movie-title">Welcome!</h3>
+                <ul class="movie__list" id="movie-list"></ul>
+            </div>
+        </main> 
+        <footer class="footer-container"><h4><i class="far fa-copyright"></i> Suleika Tentua</h4></footer>
     </body>
 </html>

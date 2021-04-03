@@ -1,7 +1,7 @@
-@import './searchbar';
-@import './variables';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
+$color:rgb(225, 222, 222);
+$first: #3E5151;
+$second: #DECBA4; 
 
 * {
     margin: 0;
@@ -14,6 +14,7 @@
 // header desktop view
 .container {
     background-color: $color;
+    font-family: 'Poppins', sans-serif;
 }
 
 .filter--menu { 
@@ -24,30 +25,49 @@
     background: $first;
     background: -webkit-linear-gradient(to left, $second, $first);
     background: linear-gradient(to left, $second, $first); 
-    font-family: 'Poppins', sans-serif;
+    padding-top: 20px;
 }
 
 h1  {
     color: $color;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 22px;
+    font-size: 2.5em;
     font-weight: bold;
     text-shadow: 1px 1px 1px rgb(136, 130, 130);
+    padding-top: 20px;
+  
+}
+
+h2 {
+    color: $first;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.movie-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 //radio btns
 .filter__links {
     display: flex;
     justify-content: space-around;
-    width: 40%; 
+    width: 50%; 
 }
 
 .radiobtn-container { 
     color: $color;
     font-weight: bold;
     letter-spacing: 2px;
-    font-size: 14px;
+    font-size: 1.1em;
     text-transform: uppercase;
 }
 
@@ -77,9 +97,12 @@ h1  {
 }
 
 //database images styling
+.movie--container {
+    margin-top: 20px;
+}
 .movie__list{
    display: grid;
-   grid-template-columns: repeat(auto-fit,minmax(325px, 1fr)); 
+   grid-template-columns: repeat(auto-fit,minmax(300px, 1fr)); 
 }
 
 .images-center {
@@ -93,7 +116,7 @@ h1  {
 .images-styles {
    border-radius: 10px;
    width: 300px;
-   height: 444px;
+   height: 445px;
 }
 
 //burger menu
@@ -109,21 +132,96 @@ h1  {
     margin: 5px;
 }
 
+//searchbar 
+.wrap {
+    background: $first;
+    background: -webkit-linear-gradient(to left, $second, $first);
+    background: linear-gradient(to left, $second, $first);
+    padding: 10px 10px; 
+}
+
+#form-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 150px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.search-input {
+    width: 50%;
+    max-width: 300px;
+    height: 28px;
+    border: 1px solid $first;
+    border-radius: 5px 0 0 5px; 
+    border-right: none;
+    background-color: $first;
+    color: $color;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    font-weight: bold;
+
+    &:focus {
+        color: rgb(220, 220, 189);
+    }
+
+    &::placeholder {
+        color: $color;
+        font-weight: bold; 
+    }
+}
+
+.search-button {
+    width: 40px;
+    height: 28px;
+    border: 1px solid $first; 
+    background: $first; 
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: $second;
+    outline: none;
+}
+
+//footer
+.footer-container {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 5px;
+}
+
 //media queries tablet version 
 @media screen and (max-width:1024px){
     .filter__links {
         width: 60%;
+        font-size: 14px;
     }
     .movie__list{
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(600px, 1fr)); 
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr)); 
      }
+    h1 {
+        font-size: 1.7em;
+    }
 }
 
 // Media queries mobile version
 @media screen and (max-width:768px){
     .container {
         overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
+
+    .movie-title{
+        font-size: 1.2em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-top: 30px;
     }
 
     .filter__links {
@@ -180,4 +278,9 @@ h1  {
     .radio-active {
         transform: translateX(0%);
     }
+
+    .wrap {
+        display: none;
+    }
 }
+
